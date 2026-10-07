@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>miauufps · links</title>
+  <meta name="description" content="Lives de FPS com muito grito e pouca mira. Valorant, CS e GTA RP — Twitch, Kick, TikTok e Pix.">
+  <meta name="theme-color" content="#140a1f">
+
+  <!-- Open Graph (como o link aparece quando compartilhado) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="miauufps · links">
+  <meta property="og:description" content="Lives de FPS com muito grito e pouca mira. Valorant, CS e GTA RP.">
+  <meta property="og:url" content="https://taynagoncalves.github.io/miau/">
+  <meta property="og:locale" content="pt_BR">
+  <!-- Para mostrar uma imagem na prévia, suba um arquivo (ex.: preview.png, 1200x630) e descomente: -->
+  <!-- <meta property="og:image" content="https://taynagoncalves.github.io/miau/preview.png"> -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="miauufps · links">
+  <meta name="twitter:description" content="Lives de FPS com muito grito e pouca mira.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>">
+
+  <style>
+    :root {
+      --bg: #140a1f;
+      --bg-2: #1f1030;
+      --card: #24143a;
+      --card-hover: #2e1a4a;
+      --text: #f6eefe;
+      --muted: #b9a6cf;
+      --pink: #ff4fa3;
+      --pink-soft: #ff8cc6;
+      --twitch: #9146ff;
+      --kick: #53fc18;
+      --tiktok: #25f4ee;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      background:
+        radial-gradient(600px 400px at 50% -10%, rgba(255, 79, 163, .18), transparent 70%),
+        radial-gradient(500px 500px at 100% 100%, rgba(145, 70, 255, .15), transparent 70%),
+        var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.4;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 48px 16px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* ---------- Avatar com orelhas de gato ---------- */
+    .avatar {
+      position: relative;
+      width: 112px;
+      height: 112px;
+      margin-top: 18px;
+    }
+    .avatar::before,
+    .avatar::after {
+      content: "";
+      position: absolute;
+      top: -16px;
+      width: 0;
+      height: 0;
+      border-left: 22px solid transparent;
+      border-right: 22px solid transparent;
+      border-bottom: 40px solid var(--pink);
+      z-index: 0;
+    }
+    .avatar::before { left: 4px;  transform: rotate(-22deg); }
+    .avatar::after  { right: 4px; transform: rotate(22deg); }
+
+    .avatar-img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 4px solid var(--pink);
+      background: linear-gradient(145deg, #3a1d5c, #22113a);
+      box-shadow: 0 0 0 6px rgba(255, 79, 163, .15), 0 10px 30px rgba(0, 0, 0, .45);
+      display: grid;
+      place-items: center;
+      font-size: 54px;
+      overflow: hidden;
+    }
+    .avatar-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    h1 {
+      margin: 18px 0 6px;
+      font-size: 1.75rem;
+      letter-spacing: .5px;
+    }
+    h1 span { color: var(--pink); }
+
+    .bio {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 32ch;
+    }
+
+    .tags {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 28px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+    .tags li {
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--pink-soft);
+      background: rgba(255, 79, 163, .1);
+      border: 1px solid rgba(255, 79, 163, .35);
+    }
+
+    /* ---------- Botões ---------- */
+    .links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .btn {
+      --accent: var(--pink);
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      min-height: 64px;
+      padding: 12px 18px 12px 14px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-left: 5px solid var(--accent);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-align: left;
+      transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:hover {
+      background: var(--card-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .35), 0 0 0 1px var(--accent);
+    }
+    .btn:active { transform: translateY(0); }
+    .btn:focus-visible {
+      outline: 3px solid var(--pink-soft);
+      outline-offset: 3px;
+    }
+
+    .btn .icon {
+      flex: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: color-mix(in srgb, var(--accent) 18%, transparent);
+      color: var(--accent);
+    }
+    .btn .icon svg { width: 22px; height: 22px; }
+
+    .btn .label { flex: 1; }
+    .btn .label small {
+      display: block;
+      font-weight: 500;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    .btn .arrow {
+      flex: none;
+      opacity: .5;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    .btn:hover .arrow { opacity: 1; transform: translateX(3px); }
+
+    /* Botão em destaque (Pix) */
+    .btn.featured {
+      background: linear-gradient(135deg, #ff4fa3, #d63384);
+      border: none;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(255, 79, 163, .35);
+    }
+    .btn.featured:hover {
+      background: linear-gradient(135deg, #ff66b0, #e04392);
+      box-shadow: 0 12px 30px rgba(255, 79, 163, .5);
+    }
+    .btn.featured:focus-visible { outline-color: #fff; }
+    .btn.featured .icon { background: rgba(255, 255, 255, .2); color: #fff; }
+    .btn.featured .label small { color: rgba(255, 255, 255, .85); }
+
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    footer .paw { color: var(--pink); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn, .btn .arrow { transition: none; }
+      .btn:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="avatar"><div class="avatar-img" id="avatar"></div></div>
+      <h1 id="name"></h1>
+      <p class="bio" id="bio"></p>
+      <ul class="tags" id="tags"></ul>
+    </header>
+
+    <nav aria-label="Links">
+      <ul class="links" id="links"></ul>
+    </nav>
+
+    <footer>
+      <p><span class="paw" aria-hidden="true">🐾</span> <span id="footer"></span></p>
+    </footer>
+
+    <noscript>
+      <p><a href="https://livepix.gg/miauufps" target="_blank" rel="noopener">Pix</a> · <a href="https://www.twitch.tv/miauufps" target="_blank" rel="noopener">Twitch</a> · <a href="https://kick.com/miauufps" target="_blank" rel="noopener">Kick</a> · <a href="https://www.tiktok.com/@mimiauzii" target="_blank" rel="noopener">TikTok</a></p>
+    </noscript>
+  </main>
+
+  <script>
+    // ============================================================
+    //  EDITE AQUI: textos e links da página
+    // ============================================================
+    const PERFIL = {
+      nome: "miauufps",
+      bio: "Lives de FPS com muito grito e pouca mira.",
+      tags: ["Valorant", "CS", "GTA RP"],
+      // Coloque o caminho de uma foto (ex.: "avatar.jpg") ou deixe vazio para usar o gatinho
+      avatar: "img/perfil.png",
+      rodape: "Segue lá pra saber quando a live abrir",
+    };
+
+    // Ícones disponíveis: "pix", "twitch", "kick", "tiktok"
+    const LINKS = [
+      { titulo: "Mandar um Pix", subtitulo: "via LivePix", url: "https://livepix.gg/miauufps",        icone: "pix",    cor: "#ffffff", destaque: true },
+      { titulo: "Twitch",        subtitulo: "@miauufps",   url: "https://www.twitch.tv/miauufps",     icone: "twitch", cor: "#9146ff" },
+      { titulo: "Kick",          subtitulo: "@miauufps",   url: "https://kick.com/miauufps",          icone: "kick",   cor: "#53fc18" },
+      { titulo: "TikTok",        subtitulo: "@mimiauzii",  url: "https://www.tiktok.com/@mimiauzii",  icone: "tiktok", cor: "#25f4ee" },
+    ];
+    // ============================================================
+
+    const ICONES = {
+      pix: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5 21.5 12 12 21.5 2.5 12 12 2.5Zm0 4.2L6.7 12 12 17.3 17.3 12 12 6.7Z"/></svg>',
+      twitch: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2 2.5 6v14h5v3h3l3-3h4l5-5V2H4Zm16 12-3 3h-5l-3 3v-3H5V4h15v10Zm-4-6h2v5h-2V8Zm-5 0h2v5h-2V8Z"/></svg>',
+      kick: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h5v5h2V6h2V4h2V3h5v6h-2v2h-2v2h2v2h2v6h-5v-1h-2v-2h-2v-2H9v5H4V3Z"/></svg>',
+      tiktok: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 2c.3 2.5 1.8 4.1 4.3 4.3v3.1c-1.6.1-3-.4-4.3-1.3v6.6c0 3.7-2.6 6.3-6.2 6.3A6.1 6.1 0 0 1 4 14.9c0-3.9 3.4-6.6 7.2-6v3.3c-1.9-.4-3.9.8-3.9 2.8 0 1.6 1.3 2.9 3 2.9 1.8 0 3-1.2 3-3.3V2h3.2Z"/></svg>',
+    };
+
+    const SETA = '<svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>';
+
+    function render() {
+      const nome = document.getElementById("name");
+      nome.innerHTML = PERFIL.nome.replace(/^(miau)/i, "<span>$1</span>");
+
+      document.getElementById("bio").textContent = PERFIL.bio;
+      document.getElementById("footer").textContent = PERFIL.rodape;
+
+      const avatar = document.getElementById("avatar");
+      if (PERFIL.avatar) {
+        const img = document.createElement("img");
+        img.src = PERFIL.avatar;
+        img.alt = "Foto de " + PERFIL.nome;
+        avatar.appendChild(img);
+      } else {
+        avatar.textContent = "🐱";
+        avatar.setAttribute("role", "img");
+        avatar.setAttribute("aria-label", "Avatar de gatinho");
+      }
+
+      const tags = document.getElementById("tags");
+      PERFIL.tags.forEach(t => {
+        const li = document.createElement("li");
+        li.textContent = t;
+        tags.appendChild(li);
+      });
+
+      const lista = document.getElementById("links");
+      LINKS.forEach(link => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = link.url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.className = "btn" + (link.destaque ? " featured" : "");
+        if (link.cor) a.style.setProperty("--accent", link.cor);
+        a.innerHTML =
+          '<span class="icon">' + (ICONES[link.icone] || "") + '</span>' +
+          '<span class="label"></span>' + SETA;
+        const label = a.querySelector(".label");
+        label.textContent = link.titulo;
+        if (link.subtitulo) {
+          const small = document.createElement("small");
+          small.textContent = link.subtitulo;
+          label.appendChild(small);
+        }
+        li.appendChild(a);
+        lista.appendChild(li);
+      });
+    }
+
+    render();
+  </script>
+</body>
+</html>
