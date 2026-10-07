@@ -109,6 +109,9 @@
       display: block;
     }
 
+    header { margin-bottom: 28px; }
+    .tags:empty { display: none; }
+
     h1 {
       margin: 18px 0 6px;
       font-size: 1.75rem;
@@ -126,7 +129,7 @@
     .tags {
       list-style: none;
       padding: 0;
-      margin: 16px 0 28px;
+      margin: 16px 0 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -268,8 +271,8 @@
     // ============================================================
     const PERFIL = {
       nome: "MIAU",
-      bio: "Lives de FPS com muito grito e pouca mira.",
-      tags: ["Valorant", "CS", "GTA RP"],
+      bio: "",  // deixe vazio para esconder
+      tags: [], // ex.: ["Valorant", "CS", "GTA RP"] — vazio esconde
       // Coloque o caminho de uma foto (ex.: "avatar.jpg") ou deixe vazio para usar o gatinho
       avatar: "img/perfil.png",
       rodape: "", // deixe vazio para esconder o rodapé
@@ -297,7 +300,9 @@
       const nome = document.getElementById("name");
       nome.innerHTML = PERFIL.nome.replace(/^(miau)/i, "<span>$1</span>");
 
-      document.getElementById("bio").textContent = PERFIL.bio;
+      const bio = document.getElementById("bio");
+      bio.textContent = PERFIL.bio;
+      bio.hidden = !PERFIL.bio;
       document.getElementById("footer").textContent = PERFIL.rodape;
       document.getElementById("rodape").hidden = !PERFIL.rodape;
 
