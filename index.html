@@ -2,104 +2,119 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>miauufps · links</title>
-  <meta name="description" content="Lives de FPS com muito grito e pouca mira. Valorant, CS e GTA RP — Twitch, Kick, TikTok e Pix.">
-  <meta name="theme-color" content="#07060a">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MIAU · links</title>
+  <meta name="description" content="MIAU — lives de FPS. Twitch, Kick, TikTok e Pix em um só lugar.">
+  <meta name="theme-color" content="#09080d">
 
   <!-- Open Graph (como o link aparece quando compartilhado) -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="miauufps · links">
-  <meta property="og:description" content="Lives de FPS com muito grito e pouca mira. Valorant, CS e GTA RP.">
+  <meta property="og:title" content="MIAU · links">
+  <meta property="og:description" content="Lives de FPS. Twitch, Kick, TikTok e Pix em um só lugar.">
   <meta property="og:url" content="https://taynagoncalves.github.io/miau/">
+  <meta property="og:image" content="https://taynagoncalves.github.io/miau/img/perfil.jpg">
   <meta property="og:locale" content="pt_BR">
-  <!-- Para mostrar uma imagem na prévia, suba um arquivo (ex.: preview.png, 1200x630) e descomente: -->
-  <!-- <meta property="og:image" content="https://taynagoncalves.github.io/miau/preview.png"> -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="miauufps · links">
-  <meta name="twitter:description" content="Lives de FPS com muito grito e pouca mira.">
+  <meta name="twitter:title" content="MIAU · links">
+  <meta name="twitter:description" content="Lives de FPS. Twitch, Kick, TikTok e Pix em um só lugar.">
+  <meta name="twitter:image" content="https://taynagoncalves.github.io/miau/img/perfil.jpg">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>">
+  <link rel="icon" href="img/perfil.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #07060a;
-      --bg-2: #0f0c15;
-      --card: #14111b;
-      --card-hover: #1d1828;
-      --text: #f4f0fa;
-      --muted: #a59db5;
+      --bg: #09080d;
+      --surface: rgba(255, 255, 255, .035);
+      --surface-hover: rgba(255, 255, 255, .065);
+      --line: rgba(255, 255, 255, .08);
+      --line-hover: rgba(255, 255, 255, .16);
+      --text: #f5f3fa;
+      --muted: #8f88a0;
       --roxo: #a855f7;
-      --roxo-claro: #c9a3ff;
-      --twitch: #9146ff;
-      --kick: #53fc18;
-      --tiktok: #25f4ee;
-      --radius: 18px;
+      --roxo-escuro: #6d28d9;
+      --roxo-claro: #d8b4fe;
+      --radius: 16px;
+      --font-display: "Sora", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     }
 
     * { box-sizing: border-box; }
-
     html, body { margin: 0; }
 
     body {
       min-height: 100vh;
       min-height: 100dvh;
-      background:
-        radial-gradient(600px 400px at 50% -10%, rgba(168, 85, 247, .18), transparent 70%),
-        radial-gradient(500px 500px at 100% 100%, rgba(109, 40, 217, .18), transparent 70%),
-        var(--bg);
+      background: var(--bg);
       color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: var(--font-body);
       line-height: 1.4;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Brilho roxo no topo + grade de pontos sutil */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::before {
+      background:
+        radial-gradient(60% 45% at 50% 0%, rgba(124, 58, 237, .32), transparent 70%),
+        radial-gradient(40% 35% at 85% 100%, rgba(168, 85, 247, .12), transparent 70%);
+    }
+    body::after {
+      background-image: radial-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px);
+      background-size: 22px 22px;
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 55%);
+              mask-image: linear-gradient(to bottom, #000 0%, transparent 55%);
+    }
+
     main {
+      position: relative;
+      z-index: 1;
       width: 100%;
       max-width: 420px;
       margin: 0 auto;
-      padding: 48px 16px 32px;
+      padding: 56px 16px 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
 
-    /* ---------- Avatar com orelhas de gato ---------- */
+    /* ---------- Perfil ---------- */
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
     .avatar {
       position: relative;
-      width: 112px;
-      height: 112px;
-      margin: 18px auto 0;
+      width: 116px;
+      height: 116px;
+      padding: 3px;
+      border-radius: 50%;
+      background: conic-gradient(from 210deg, var(--roxo-escuro), var(--roxo), var(--roxo-claro), var(--roxo), var(--roxo-escuro));
+      box-shadow: 0 0 40px rgba(168, 85, 247, .35), 0 12px 32px rgba(0, 0, 0, .5);
     }
-    .avatar::before,
-    .avatar::after {
-      content: "";
-      position: absolute;
-      top: -16px;
-      width: 0;
-      height: 0;
-      border-left: 22px solid transparent;
-      border-right: 22px solid transparent;
-      border-bottom: 40px solid var(--roxo);
-      z-index: 0;
-    }
-    .avatar::before { left: 4px;  transform: rotate(-22deg); }
-    .avatar::after  { right: 4px; transform: rotate(22deg); }
-
     .avatar-img {
-      position: relative;
-      z-index: 1;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      border: 4px solid var(--roxo);
-      background: linear-gradient(145deg, #1c1428, #0b0910);
-      box-shadow: 0 0 0 6px rgba(168, 85, 247, .15), 0 10px 30px rgba(0, 0, 0, .45);
+      border: 3px solid var(--bg);
+      background: #17131f;
       display: grid;
       place-items: center;
-      font-size: 54px;
+      font-size: 52px;
       overflow: hidden;
     }
     .avatar-img img {
@@ -109,51 +124,75 @@
       display: block;
     }
 
-    header { margin-bottom: 28px; }
-    .tags:empty { display: none; }
-
     h1 {
-      margin: 18px 0 6px;
-      font-size: 1.75rem;
-      letter-spacing: .5px;
+      margin: 20px 0 0;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      line-height: 1.1;
+      background: linear-gradient(180deg, #fff 20%, var(--roxo-claro));
+      -webkit-background-clip: text;
+              background-clip: text;
+      color: transparent;
     }
-    h1 span { color: var(--roxo); }
 
     .bio {
-      margin: 0;
+      margin: 10px 0 0;
       color: var(--muted);
-      font-size: 1rem;
+      font-size: .95rem;
       max-width: 32ch;
     }
 
     .tags {
       list-style: none;
       padding: 0;
-      margin: 16px 0 0;
+      margin: 14px 0 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 8px;
     }
+    .tags:empty { display: none; }
     .tags li {
-      padding: 5px 12px;
+      padding: 4px 12px;
       border-radius: 999px;
-      font-size: .82rem;
+      font-size: .78rem;
       font-weight: 600;
       color: var(--roxo-claro);
       background: rgba(168, 85, 247, .1);
-      border: 1px solid rgba(168, 85, 247, .35);
+      border: 1px solid rgba(168, 85, 247, .3);
     }
 
-    /* ---------- Botões ---------- */
+    /* ---------- Links ---------- */
+    nav { width: 100%; }
+
     .links {
       list-style: none;
       padding: 0;
       margin: 0;
-      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 28px 0 14px;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .section-label::before,
+    .section-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
     }
 
     .btn {
@@ -163,101 +202,148 @@
       align-items: center;
       gap: 14px;
       width: 100%;
-      min-height: 64px;
-      padding: 12px 18px 12px 14px;
+      min-height: 68px;
+      padding: 12px 16px 12px 12px;
       border-radius: var(--radius);
-      background: var(--card);
-      border: 1px solid rgba(255, 255, 255, .06);
-      border-left: 5px solid var(--accent);
+      background: var(--surface);
+      border: 1px solid var(--line);
       color: var(--text);
       text-decoration: none;
-      font-weight: 700;
-      font-size: 1.05rem;
       text-align: left;
-      transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease;
+      overflow: hidden;
+      isolation: isolate;
+      -webkit-backdrop-filter: blur(8px);
+              backdrop-filter: blur(8px);
+      transition: transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
       -webkit-tap-highlight-color: transparent;
     }
-    .btn:hover {
-      background: var(--card-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, .35), 0 0 0 1px var(--accent);
+    /* brilho na cor da plataforma ao passar o mouse */
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(120% 140% at 0% 50%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 55%);
+      opacity: 0;
+      transition: opacity .2s ease;
     }
-    .btn:active { transform: translateY(0); }
+    .btn:hover {
+      background: var(--surface-hover);
+      border-color: color-mix(in srgb, var(--accent) 45%, var(--line-hover));
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .45);
+    }
+    .btn:hover::before { opacity: 1; }
+    .btn:active { transform: translateY(0) scale(.99); }
     .btn:focus-visible {
-      outline: 3px solid var(--roxo-claro);
+      outline: 2px solid var(--roxo-claro);
       outline-offset: 3px;
     }
 
     .btn .icon {
       flex: none;
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
       display: grid;
       place-items: center;
-      background: color-mix(in srgb, var(--accent) 18%, transparent);
-      color: var(--accent);
+      background: var(--accent);
+      color: var(--icon-color, #fff);
+      box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 35%, transparent);
     }
     .btn .icon svg { width: 22px; height: 22px; }
 
-    .btn .label { flex: 1; }
+    .btn .label {
+      flex: 1;
+      min-width: 0;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.02rem;
+      letter-spacing: .01em;
+    }
     .btn .label small {
       display: block;
+      margin-top: 2px;
+      font-family: var(--font-body);
       font-weight: 500;
       font-size: .8rem;
       color: var(--muted);
+      letter-spacing: 0;
     }
 
     .btn .arrow {
       flex: none;
-      opacity: .5;
-      transition: transform .15s ease, opacity .15s ease;
+      color: var(--muted);
+      transition: transform .2s ease, color .2s ease;
     }
-    .btn:hover .arrow { opacity: 1; transform: translateX(3px); }
+    .btn:hover .arrow { color: var(--text); transform: translate(2px, -2px); }
 
-    /* Botão em destaque (Pix) */
+    /* ---------- Botão em destaque (Pix) ---------- */
     .btn.featured {
-      background: linear-gradient(135deg, #a855f7, #6d28d9);
-      border: none;
-      color: #fff;
-      box-shadow: 0 8px 24px rgba(168, 85, 247, .35);
+      min-height: 76px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      background: linear-gradient(135deg, var(--roxo) 0%, var(--roxo-escuro) 100%);
+      box-shadow: 0 12px 34px rgba(124, 58, 237, .45), inset 0 1px 0 rgba(255, 255, 255, .25);
+    }
+    /* reflexo que atravessa o botão */
+    .btn.featured::before {
+      opacity: 1;
+      background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .22) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform .7s ease;
     }
     .btn.featured:hover {
-      background: linear-gradient(135deg, #b672f9, #7c3aed);
-      box-shadow: 0 12px 30px rgba(168, 85, 247, .5);
+      background: linear-gradient(135deg, #b46cf9 0%, #7c3aed 100%);
+      border-color: rgba(255, 255, 255, .3);
+      box-shadow: 0 16px 40px rgba(124, 58, 237, .6), inset 0 1px 0 rgba(255, 255, 255, .3);
     }
+    .btn.featured:hover::before { transform: translateX(100%); }
+    .btn.featured .icon {
+      background: rgba(255, 255, 255, .18);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .2);
+    }
+    .btn.featured .label { font-size: 1.1rem; }
+    .btn.featured .label small,
+    .btn.featured .arrow { color: rgba(255, 255, 255, .8); }
     .btn.featured:focus-visible { outline-color: #fff; }
-    .btn.featured .icon { background: rgba(255, 255, 255, .2); color: #fff; }
-    .btn.featured .label small { color: rgba(255, 255, 255, .85); }
 
     footer {
-      margin-top: 32px;
+      margin-top: 36px;
       color: var(--muted);
-      font-size: .9rem;
+      font-size: .85rem;
     }
-    footer .paw { color: var(--roxo); }
+
+    /* ---------- Entrada suave ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: reveal .5s ease forwards;
+      animation-delay: calc(var(--i, 0) * 70ms);
+    }
+    @keyframes reveal {
+      to { opacity: 1; transform: none; }
+    }
 
     @media (prefers-reduced-motion: reduce) {
-      .btn, .btn .arrow { transition: none; }
+      .reveal { animation: none; opacity: 1; transform: none; }
+      .btn, .btn::before, .btn .arrow { transition: none; }
       .btn:hover { transform: none; }
     }
   </style>
 </head>
 <body>
   <main>
-    <header>
+    <header class="reveal">
       <div class="avatar"><div class="avatar-img" id="avatar"></div></div>
       <h1 id="name"></h1>
       <p class="bio" id="bio"></p>
       <ul class="tags" id="tags"></ul>
     </header>
 
-    <nav aria-label="Links">
-      <ul class="links" id="links"></ul>
-    </nav>
+    <nav aria-label="Links" id="nav"></nav>
 
     <footer id="rodape">
-      <p><span class="paw" aria-hidden="true">🐾</span> <span id="footer"></span></p>
+      <p id="footer"></p>
     </footer>
 
     <noscript>
@@ -273,36 +359,72 @@
       nome: "MIAU",
       bio: "",  // deixe vazio para esconder
       tags: [], // ex.: ["Valorant", "CS", "GTA RP"] — vazio esconde
-      // Coloque o caminho de uma foto (ex.: "avatar.jpg") ou deixe vazio para usar o gatinho
-      avatar: "img/perfil.png",
+      // Caminho da foto (ex.: "img/perfil.jpg") ou vazio para usar o gatinho
+      avatar: "img/perfil.jpg",
+      tituloPlataformas: "Onde me assistir", // texto acima dos botões das plataformas
       rodape: "", // deixe vazio para esconder o rodapé
     };
 
     // Ícones disponíveis: "pix", "twitch", "kick", "tiktok"
+    // destaque: true -> botão grande em roxo, no topo
     const LINKS = [
-      { titulo: "Mandar um Pix", subtitulo: "via LivePix", url: "https://livepix.gg/taynaa",        icone: "pix",    cor: "#ffffff", destaque: true },
-      { titulo: "Twitch",        subtitulo: "@miauufps",   url: "https://www.twitch.tv/miauufps",     icone: "twitch", cor: "#9146ff" },
-      { titulo: "Kick",          subtitulo: "@mimiauzi",    url: "https://kick.com/mimiauzi",          icone: "kick",   cor: "#53fc18" },
-      { titulo: "TikTok",        subtitulo: "@mimiauzii",  url: "https://www.tiktok.com/@mimiauzii",  icone: "tiktok", cor: "#25f4ee" },
+      { titulo: "Mandar um Pix", subtitulo: "Apoie a live pelo LivePix", url: "https://livepix.gg/taynaa",         icone: "pix",    destaque: true },
+      { titulo: "Twitch",        subtitulo: "@miauufps",                 url: "https://www.twitch.tv/miauufps",    icone: "twitch", cor: "#9146ff" },
+      { titulo: "Kick",          subtitulo: "@mimiauzi",                 url: "https://kick.com/mimiauzi",         icone: "kick",   cor: "#53fc18", corIcone: "#0b0b0b" },
+      { titulo: "TikTok",        subtitulo: "@mimiauzii",                url: "https://www.tiktok.com/@mimiauzii", icone: "tiktok", cor: "#25f4ee", corIcone: "#0b0b0b" },
     ];
     // ============================================================
 
     const ICONES = {
-      pix: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5 21.5 12 12 21.5 2.5 12 12 2.5Zm0 4.2L6.7 12 12 17.3 17.3 12 12 6.7Z"/></svg>',
-      twitch: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2 2.5 6v14h5v3h3l3-3h4l5-5V2H4Zm16 12-3 3h-5l-3 3v-3H5V4h15v10Zm-4-6h2v5h-2V8Zm-5 0h2v5h-2V8Z"/></svg>',
-      kick: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h5v5h2V6h2V4h2V3h5v6h-2v2h-2v2h2v2h2v6h-5v-1h-2v-2h-2v-2H9v5H4V3Z"/></svg>',
-      tiktok: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 2c.3 2.5 1.8 4.1 4.3 4.3v3.1c-1.6.1-3-.4-4.3-1.3v6.6c0 3.7-2.6 6.3-6.2 6.3A6.1 6.1 0 0 1 4 14.9c0-3.9 3.4-6.6 7.2-6v3.3c-1.9-.4-3.9.8-3.9 2.8 0 1.6 1.3 2.9 3 2.9 1.8 0 3-1.2 3-3.3V2h3.2Z"/></svg>',
+      pix: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
+      twitch: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>',
+      kick: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h6v6h2V7h2V5h2V3h6v6h-2v2h-2v2h2v2h2v6h-6v-2h-2v-2h-2v-2H9v6H3z"/></svg>',
+      tiktok: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>',
     };
 
-    const SETA = '<svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>';
+    const SETA = '<svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+
+    function criarBotao(link, ordem) {
+      const li = document.createElement("li");
+      li.className = "reveal";
+      li.style.setProperty("--i", ordem);
+
+      const a = document.createElement("a");
+      a.href = link.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.className = "btn" + (link.destaque ? " featured" : "");
+      if (link.cor) a.style.setProperty("--accent", link.cor);
+      if (link.corIcone) a.style.setProperty("--icon-color", link.corIcone);
+      a.innerHTML =
+        '<span class="icon">' + (ICONES[link.icone] || "") + '</span>' +
+        '<span class="label"></span>' + SETA;
+
+      const label = a.querySelector(".label");
+      label.textContent = link.titulo;
+      if (link.subtitulo) {
+        const small = document.createElement("small");
+        small.textContent = link.subtitulo;
+        label.appendChild(small);
+      }
+      li.appendChild(a);
+      return li;
+    }
+
+    function criarLista(links, inicio) {
+      const ul = document.createElement("ul");
+      ul.className = "links";
+      links.forEach((link, i) => ul.appendChild(criarBotao(link, inicio + i)));
+      return ul;
+    }
 
     function render() {
-      const nome = document.getElementById("name");
-      nome.innerHTML = PERFIL.nome.replace(/^(miau)/i, "<span>$1</span>");
+      document.getElementById("name").textContent = PERFIL.nome;
 
       const bio = document.getElementById("bio");
       bio.textContent = PERFIL.bio;
       bio.hidden = !PERFIL.bio;
+
       document.getElementById("footer").textContent = PERFIL.rodape;
       document.getElementById("rodape").hidden = !PERFIL.rodape;
 
@@ -311,6 +433,8 @@
         const img = document.createElement("img");
         img.src = PERFIL.avatar;
         img.alt = "Foto de " + PERFIL.nome;
+        img.width = 110;
+        img.height = 110;
         avatar.appendChild(img);
       } else {
         avatar.textContent = "🐱";
@@ -325,28 +449,21 @@
         tags.appendChild(li);
       });
 
-      const lista = document.getElementById("links");
-      LINKS.forEach(link => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = link.url;
-        a.target = "_blank";
-        a.rel = "noopener";
-        a.className = "btn" + (link.destaque ? " featured" : "");
-        if (link.cor) a.style.setProperty("--accent", link.cor);
-        a.innerHTML =
-          '<span class="icon">' + (ICONES[link.icone] || "") + '</span>' +
-          '<span class="label"></span>' + SETA;
-        const label = a.querySelector(".label");
-        label.textContent = link.titulo;
-        if (link.subtitulo) {
-          const small = document.createElement("small");
-          small.textContent = link.subtitulo;
-          label.appendChild(small);
+      const nav = document.getElementById("nav");
+      const destaques = LINKS.filter(l => l.destaque);
+      const plataformas = LINKS.filter(l => !l.destaque);
+
+      if (destaques.length) nav.appendChild(criarLista(destaques, 1));
+      if (plataformas.length) {
+        if (PERFIL.tituloPlataformas) {
+          const label = document.createElement("p");
+          label.className = "section-label reveal";
+          label.style.setProperty("--i", destaques.length + 1);
+          label.textContent = PERFIL.tituloPlataformas;
+          nav.appendChild(label);
         }
-        li.appendChild(a);
-        lista.appendChild(li);
-      });
+        nav.appendChild(criarLista(plataformas, destaques.length + 2));
+      }
     }
 
     render();
